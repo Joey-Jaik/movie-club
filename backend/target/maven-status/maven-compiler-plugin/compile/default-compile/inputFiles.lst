@@ -1,1 +1,16 @@
-C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\App.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\config\Database.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\controllers\AuthController.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\controllers\MovieController.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\controllers\RatingController.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\controllers\SuggestionController.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\Main.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\models\Movie.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\models\Rating.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\models\SeenIt.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\models\Suggestion.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\models\User.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\services\AuthService.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\services\MovieService.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\services\RatingService.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\services\SuggestionService.java
+C:\#MovieClubApp\movie-club\backend\src\main\java\com\movieclub\TestConnection.java
