@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Club — Next Movie</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="watched.html" class="nav-brand">🎬 Movie Club</a>
+        <ul class="nav-links">
+            <li><a href="watched.html">Watched</a></li>
+            <li><a href="rankings.html">Rankings</a></li>
+            <li><a href="next-movie.html" class="active">Next Movie</a></li>
+        </ul>
+        <div class="nav-user">Signed in as <span id="nav-username"></span></div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Next Movie</h1>
+            <p>Suggest and vote on the next movie to watch</p>
+        </div>
+
+        <!-- whose pick it is -->
+        <div class="next-picker" id="picker-info">
+            <h2>This month's pick</h2>
+            <div class="picker-name" id="picker-name">Loading...</div>
+        </div>
+
+        <!-- TMDB search — only shown to current picker -->
+        <div id="search-section" class="hidden">
+            <div class="search-container">
+                <input type="text" id="movie-search" 
+                       placeholder="Search for a movie to suggest...">
+                <div id="search-results" class="search-results hidden"></div>
+            </div>
+        </div>
+
+        <!-- suggestions list -->
+        <div id="suggestions-container">
+            <div class="empty-state">
+                <p>Loading suggestions...</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/next-movie.js"></script>
+</body>
+</html>
