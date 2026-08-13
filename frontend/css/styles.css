@@ -670,6 +670,11 @@ main {
     border-top: 1px solid var(--border);
 }
 
+.active-btn {
+    background-color: var(--accent);
+    color: #0a0a0f;
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 600px) {
     main {
