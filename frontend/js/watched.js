@@ -1,4 +1,3 @@
-//const API_URL = 'http://localhost:8080';
 
 // check user is logged in, and if not then redirect to index page, parse the JSON string stored in session storage into a javascript object
 const user = JSON.parse(sessionStorage.getItem('user'));
