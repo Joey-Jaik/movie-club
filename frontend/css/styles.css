@@ -675,6 +675,12 @@ main {
     color: #0a0a0f;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 600px) {
     main {
