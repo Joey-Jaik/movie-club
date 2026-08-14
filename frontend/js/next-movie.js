@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+//const API_URL = 'http://localhost:8080';
 const TMDB_API_KEY = CONFIG.TMDB_API_KEY;
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 
@@ -9,15 +9,19 @@ document.getElementById('nav-username').textContent = user.username;
 
 const PICK_ORDER = ['Aaron', 'Alex', 'Jamie', 'Joey', 'Kevin'];
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+    loadMovieNightBanner();
+    init();
+});
 
 async function init() {
     const currentPicker = await getCurrentPicker();
     document.getElementById('picker-name').textContent = currentPicker;
 
-    // only show the search bar to make suggestions to the current picker
+    // only show the search bar to make suggestions and date selector to the current picker
     if (currentPicker === user.username) {
         document.getElementById('search-section').classList.remove('hidden');
+        document.getElementById('movie-night-section').classList.remove('hidden');
         setupSearch();
     }
 
@@ -152,12 +156,18 @@ async function loadSuggestions() {
 
         // if no suggestions have been made yet then display that to user
         if (suggestions.length === 0) {
+            const currentPicker = document.getElementById('picker-name').textContent;
+            const isCurrentPicker = currentPicker === user.username;
+
             container.innerHTML = `
                 <div class="empty-state">
                     <p>No suggestions yet</p>
-                    <p>Search for a movie above to add a suggestion</p>
+                    ${isCurrentPicker 
+                        ? '<p>Search for a movie above to add a suggestion</p>' 
+                        : `<p>Waiting for ${currentPicker} to add suggestions</p>`}
                 </div>
             `;
+            
             return;
         }
 
@@ -324,6 +334,40 @@ async function deleteSuggestion(suggestionId) {
         }
 
         loadSuggestions();
+    }
+    catch (error) {
+        alert('Could not connect to server');
+    }
+}
+
+async function updateMovieNight() {
+    const input = document.getElementById('movie-night-input');
+    const date = input.value;
+
+    if (!date) {
+        alert('Please select a date');
+        return;
+    }
+
+    try {
+        // post new movie night date to database
+        const res = await fetch(`${API_URL}/api/settings/movie-night`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ date })
+        });
+
+        // if post request does not go through then report to user
+        if (!res.ok) {
+            alert('Could not update movie night date');
+            return;
+        }
+
+        // reload banner with new date if post request is successful
+        const existingBanner = document.getElementById('movie-night-banner');
+        if (existingBanner) existingBanner.remove();
+        loadMovieNightBanner();
+        alert('Movie night date updated');
     }
     catch (error) {
         alert('Could not connect to server');

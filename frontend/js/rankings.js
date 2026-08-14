@@ -1,11 +1,14 @@
-const API_URL = 'http://localhost:8080';
+//const API_URL = 'http://localhost:8080';
 
 const user = JSON.parse(sessionStorage.getItem('user'));
 if (!user) window.location.href = 'index.html';
 
 document.getElementById('nav-username').textContent = user.username;
 
-document.addEventListener('DOMContentLoaded', loadRankings);
+document.addEventListener('DOMContentLoaded', () => {
+    loadMovieNightBanner();
+    loadRankings();
+});
 
 async function loadRankings() {
     try {

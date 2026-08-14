@@ -30,6 +30,23 @@
             <div class="picker-name" id="picker-name">Loading...</div>
         </div>
 
+        <!-- movie night date - only shown to current picker -->
+        <div id="movie-night-section" class="hidden" style="margin-bottom: 1.5rem;">
+            <div class="card">
+                <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Set Next Movie Night Date
+                </label>
+                <div style="display: flex; gap: 0.75rem; align-items: center;">
+                    <input type="date" id="movie-night-input" 
+                        style="flex: 1; padding: 0.75rem; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-size: 0.9rem; outline: none;">
+                    <button class="btn-primary" style="width: auto; padding: 0.75rem 1.5rem;"
+                            onclick="updateMovieNight()">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- TMDB search — only shown to current picker -->
         <div id="search-section" class="hidden">
             <div class="search-container">
@@ -48,6 +65,7 @@
 
     </main>
 
+    <script src="js/utils.js"></script>
     <script src="js/config.js"></script>
     <script src="js/next-movie.js"></script>
 </body>

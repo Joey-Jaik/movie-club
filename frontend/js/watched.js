@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+//const API_URL = 'http://localhost:8080';
 
 // check user is logged in, and if not then redirect to index page, parse the JSON string stored in session storage into a javascript object
 const user = JSON.parse(sessionStorage.getItem('user'));
@@ -9,8 +9,11 @@ if (!user)
 // display username in nav
 document.getElementById('nav-username').textContent = user.username;
 
-// load movie list when page loads
-document.addEventListener('DOMContentLoaded', loadMovies);
+// load movie list and next movie night banner when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadMovieNightBanner();
+    loadMovies();
+});
 
 async function loadMovies() {
     try {

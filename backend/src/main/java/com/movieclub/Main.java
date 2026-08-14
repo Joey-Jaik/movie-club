@@ -9,6 +9,7 @@ import com.movieclub.controllers.AuthController;
 import com.movieclub.controllers.MovieController;
 import com.movieclub.controllers.RatingController;
 import com.movieclub.controllers.SuggestionController;
+import com.movieclub.controllers.SettingsController;
 
 public class Main {
     
@@ -33,6 +34,7 @@ public class Main {
         MovieController.registerRoutes(app);
         RatingController.registerRoutes(app);
         SuggestionController.registerRoutes(app);
+        SettingsController.registerRoutes(app);
 
         System.out.println("Movie Club server running on port 8080");
     }
