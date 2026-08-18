@@ -1,4 +1,3 @@
-const API_URL = 'http://localhost:8080';
 
 document.getElementById('login-btn').addEventListener('click', async () => {
     const username = document.getElementById('username').value;
