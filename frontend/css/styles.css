@@ -297,7 +297,7 @@ main {
 
 .movie-card img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 2/3;
     object-fit: cover;
 }
 
@@ -683,19 +683,105 @@ main {
 
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 600px) {
-    main {
-        padding: 1rem;
-    }
+  
+  /* ── NAV ────────────────────────────────────────────── */
+  nav {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-    .movie-grid {
-        grid-template-columns: 1fr;
-    }
+  .nav-brand {
+    font-size: 1.1rem;
+  }
 
-    nav {
-        padding: 1rem;
-    }
+  .nav-links {
+    gap: 0.75rem;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
 
-    .nav-links {
-        gap: 1rem;
-    }
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-right .nav-user {
+    font-size: 0.75rem;
+  }
+
+  .nav-right .btn-secondary {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* ── MAIN ───────────────────────────────────────────── */
+  main {
+    padding: 1rem;
+  }
+
+  /* ── MOVIE GRID ─────────────────────────────────────── */
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── MOVIE CARD POSTER ──────────────────────────────── */
+ 
+
+  /* ── RANKING ITEM ───────────────────────────────────── */
+  .ranking-item {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .ranking-info {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .ranking-meta {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── SUGGESTION CARD ────────────────────────────────── */
+  .suggestion-card {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .suggestion-actions {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .suggestion-actions button {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  /* ── MODAL ──────────────────────────────────────────── */
+  .modal-box {
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  /* ── NEXT PICKER ────────────────────────────────────── */
+  .next-picker {
+    padding: 1rem;
+  }
+
+  .next-picker .picker-name {
+    font-size: 1.4rem;
+  }
 }
