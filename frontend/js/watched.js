@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMovies();
 });
 
+function escapeQuotes(str) {
+    return str ? str.replace(/'/g, "\\'") : '';
+}
+
 async function loadMovies() {
     try {
         // use promise.all so both tasks fire at the same time instead of one after the other. Promise.all takes an array of promises to perform, and returns an array of the results, and use array detructuring to map the results in array to variables in the same, variables need to be in same order as results for mapping to work correctly
@@ -108,7 +112,7 @@ function createMovieCard(movie, ratings) {
                 ${renderRatingsList(ratings)}
             </div>
             <button class="btn-secondary" style="margin-top: 0.75rem; width: 100%"
-                    onclick="openRatingModal(${movie.id}, '${movie.title}', ${userRating ? userRating.rating : null})">
+                    onclick="openRatingModal(${movie.id}, '${escapeQuotes(movie.title)}', ${userRating ? userRating.rating : null})">
                 ${userRating ? 'Edit Rating' : 'Rate'}
             </button>
             ${user.username === 'Joey' ? `
