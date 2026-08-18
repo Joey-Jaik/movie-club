@@ -13,6 +13,8 @@ public class SettingsController {
     public static void registerRoutes(Javalin app) {
         app.get("/api/settings/movie-night", SettingsController::getMovieNight);
         app.post("/api/settings/movie-night", SettingsController::updateMovieNight);
+        app.get("/api/settings/current-picker", SettingsController::getCurrentPicker);
+        app.post("/api/settings/increment-picker", SettingsController::incrementPicker);
     }
 
     private static void getMovieNight(Context ctx) {
@@ -43,6 +45,32 @@ public class SettingsController {
                 ctx.status(200).json(Map.of("message", "Movie night updated", "date", date));
             else
                 ctx.status(500).json(Map.of("error", "Failed to update"));
+        }
+        catch (Exception e) {
+            ctx.status(500).json(Map.of("error", "Server error: " + e.getMessage()));
+        }
+    }
+
+    private static void getCurrentPicker(Context ctx) {
+        try {
+            int index = settingsService.getCurrentPickerIndex();
+            ctx.status(200).json(Map.of("index", index));
+        }
+        catch (Exception e) {
+            ctx.status(500).json(Map.of("error", "Server error: " + e.getMessage()));
+        }
+    }
+
+    private static void incrementPicker(Context ctx) {
+        try {
+            boolean updated = settingsService.incrementPickerIndex();
+
+            if (updated) {
+                int newIndex = settingsService.getCurrentPickerIndex();
+                ctx.status(200).json(Map.of("index", newIndex));
+            }
+            else
+                ctx.status(500).json(Map.of("error", "Failed to increment picker"));
         }
         catch (Exception e) {
             ctx.status(500).json(Map.of("error", "Server error: " + e.getMessage()));

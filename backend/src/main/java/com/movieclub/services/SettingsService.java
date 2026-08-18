@@ -30,4 +30,23 @@ public class SettingsService {
         return stmt.executeUpdate() > 0;
     }
     
+    public int getCurrentPickerIndex() throws SQLException {
+        String sql = "SELECT value FROM settings WHERE key = 'current_picker_index'";
+        Connection conn = Database.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        if (rs.next())
+            return Integer.parseInt(rs.getString("value"));
+
+        return 0;
+    }
+
+    public boolean incrementPickerIndex() throws SQLException {
+        String sql = "UPDATE settings SET value = CAST((CAST(value AS INTEGER) + 1) % 5 AS TEXT) WHERE key = 'current_picker_index'";
+        Connection conn = Database.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+
+        return stmt.executeUpdate() > 0;
+    }
 }

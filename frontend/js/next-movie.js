@@ -30,10 +30,10 @@ async function init() {
 
 async function getCurrentPicker() {
     try {
-        const res = await fetch(`${API_URL}/api/movies`);
-        const movies = await res.json();
-        const index = movies.length % PICK_ORDER.length;
-        return PICK_ORDER[index];
+        const res = await fetch(`${API_URL}/api/settings/current-picker`);
+        const data = await res.json();
+
+        return PICK_ORDER[data.index];
     }
     catch (error) {
         return 'Unknown';
@@ -307,6 +307,9 @@ async function markAsWatched(suggestionId) {
             alert(data.error || 'Could not mark as watched');
             return;
         }
+
+        // increment picker index in database
+        await fetch(`${API_URL}/api/settings/increment-picker`, { method: 'POST' });
 
         alert('Movie added to watched list');
         loadSuggestions();
