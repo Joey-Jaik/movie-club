@@ -1,6 +1,10 @@
 # Build stage
 FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /app
+
+# Install Maven
+RUN apt-get update && apt-get install -y maven
+
 COPY . .
 RUN cd backend && mvn clean package -DskipTests
 
