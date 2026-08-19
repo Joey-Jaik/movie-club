@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://movie-club-backend.onrender.com';
 
 async function loadMovieNightBanner() {
     try {
