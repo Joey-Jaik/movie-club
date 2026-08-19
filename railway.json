@@ -2,7 +2,10 @@
     "$schema": "https://railway.app/railway.schema.json",
     "build": {
         "builder": "NIXPACKS",
-        "buildCommand": "cd backend && mvn clean package -DskipTests"
+        "nixpacksPlan": {
+            "providers": ["java"],
+            "buildCommand": "cd backend && ./mvnw clean package -DskipTests"
+        }
     },
     "deploy": {
         "startCommand": "java -jar backend/target/backend-1.0-SNAPSHOT.jar"
