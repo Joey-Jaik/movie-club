@@ -1,0 +1,17 @@
+com\movieclub\models\Movie.class
+com\movieclub\Main.class
+com\movieclub\models\SeenIt.class
+com\movieclub\models\Suggestion.class
+com\movieclub\services\RatingService.class
+com\movieclub\models\Rating.class
+com\movieclub\config\Database.class
+com\movieclub\controllers\RatingController.class
+com\movieclub\services\MovieService.class
+com\movieclub\services\SettingsService.class
+com\movieclub\controllers\SuggestionController.class
+com\movieclub\controllers\SettingsController.class
+com\movieclub\controllers\MovieController.class
+com\movieclub\models\User.class
+com\movieclub\services\AuthService.class
+com\movieclub\controllers\AuthController.class
+com\movieclub\services\SuggestionService.class

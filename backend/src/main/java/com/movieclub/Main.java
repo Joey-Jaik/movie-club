@@ -15,6 +15,8 @@ public class Main {
     
     public static void main(String[] args) {
 
+        int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+
         ObjectMapper mapper = new ObjectMapper()
             .registerModule(new JavaTimeModule())
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
@@ -28,7 +30,7 @@ public class Main {
 
             config.jsonMapper(new JavalinJackson(mapper, true));
 
-        }).start(8080);
+        }).start(port);
 
         AuthController.registerRoutes(app);
         MovieController.registerRoutes(app);
@@ -36,6 +38,6 @@ public class Main {
         SuggestionController.registerRoutes(app);
         SettingsController.registerRoutes(app);
 
-        System.out.println("Movie Club server running on port 8080");
+        System.out.println("Movie Club server running on port " + port);
     }
 }
