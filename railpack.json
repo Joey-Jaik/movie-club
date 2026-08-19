@@ -1,0 +1,12 @@
+{
+    "packages": {
+        "java": "21",
+        "maven": "3.9"
+    },
+    "build": {
+        "cmd": "cd backend && mvn clean package -DskipTests"
+    },
+    "start": {
+        "cmd": "java -jar backend/target/backend-1.0-SNAPSHOT.jar"
+    }
+}
