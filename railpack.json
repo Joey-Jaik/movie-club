@@ -7,6 +7,7 @@
         "cmd": "cd backend && mvn clean package -DskipTests"
     },
     "start": {
-        "cmd": "java -jar backend/target/backend-1.0-SNAPSHOT.jar"
+        "cmd": "java -jar backend/target/backend-1.0-SNAPSHOT.jar",
+        "packages": ["java"]
     }
 }
