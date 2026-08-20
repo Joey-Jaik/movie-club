@@ -1,3 +1,14 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Service class handling authentication business logic for the Movie
+//          Club app. Verifies login credentials by fetching the stored BCrypt
+//          hashed PIN from the database and comparing it to the plain text PIN
+//          provided by the user. Also handles PIN updates by hashing the new
+//          PIN with BCrypt before storing it, ensuring plain text PINs are
+//          never stored in the database.
+// =============================================================================
+
 package com.movieclub.services;
 
 import com.movieclub.config.Database;

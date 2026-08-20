@@ -1,4 +1,16 @@
-//const API_URL = 'http://localhost:8080';
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Handles the next movie page of the Movie Club app. Determines the
+//          current picker from the database and displays their name. Shows a
+//          TMDB movie search bar to the current picker so they can add up to
+//          three suggestions. Displays all current suggestions with seen it
+//          voting counts, and allows the current picker to mark a movie as
+//          watched or delete a suggestion. Marking as watched moves the movie
+//          to the watched list, clears all suggestions, and advances the pick
+//          order to the next member.
+// =============================================================================
+
 const TMDB_API_KEY = CONFIG.TMDB_API_KEY;
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 

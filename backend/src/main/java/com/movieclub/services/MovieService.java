@@ -1,9 +1,18 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Service class handling all watched movie business logic for the Movie
+//          Club app. Fetches all movies joined with user and rating data to
+//          populate convenience fields in one query. Provides ranked movies
+//          sorted by aggregate rating for the rankings page, filtered to only
+//          include movies with at least one rating. Handles adding and deleting
+//          movies using prepared statements to prevent SQL injection.
+// =============================================================================
+
 package com.movieclub.services;
 
 import com.movieclub.config.Database;
 import com.movieclub.models.Movie;
-
-//import net.bytebuddy.dynamic.scaffold.MethodRegistry.Prepared;
 
 import java.sql.*;
 import java.time.LocalDate;

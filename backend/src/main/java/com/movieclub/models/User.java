@@ -1,3 +1,12 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Model class representing a user in the Movie Club app. Maps directly
+//          to the users table in the database with fields for id, username,
+//          hashed PIN, and pick order. Used by AuthService for login and PIN
+//          updates, and returned to the frontend on successful authentication.
+// =============================================================================
+
 package com.movieclub.models;
 
 public class User {

@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Entry point for the Movie Club backend server. Creates and configures
+//          the Javalin web server with CORS enabled and Jackson JSR310 date
+//          support. Registers all API routes from the four controllers and
+//          starts the server on the port provided by the environment or
+//          defaults to 8080 for local development.
+// =============================================================================
+
 package com.movieclub;
 
 import io.javalin.Javalin;

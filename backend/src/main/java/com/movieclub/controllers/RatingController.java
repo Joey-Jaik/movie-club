@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: REST controller handling rating endpoints for the Movie Club app.
+//          Registers routes for saving or updating a member rating and deleting
+//          a rating. Uses an upsert pattern so the same endpoint handles both
+//          new ratings and edits to existing ones. Validates that the rating
+//          value is between 0.0 and 10.0 before passing to RatingService.
+// =============================================================================
+
 package com.movieclub.controllers;
 
 import com.movieclub.models.Rating;

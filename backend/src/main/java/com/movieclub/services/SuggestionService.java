@@ -1,3 +1,15 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Service class handling all suggestion business logic for the Movie
+//          Club app. Enforces the three suggestion limit per member before
+//          inserting. Handles marking a suggestion as watched by fetching its
+//          details, adding it to the movies table via MovieService, and clearing
+//          all suggestions so the next picker starts fresh. Manages seen it
+//          responses using an upsert pattern and fetches seen it data joined
+//          with user information for display on the next movie page.
+// =============================================================================
+
 package com.movieclub.services;
 
 import com.movieclub.config.Database;

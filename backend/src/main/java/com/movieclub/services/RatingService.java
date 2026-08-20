@@ -1,3 +1,14 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Service class handling all rating business logic for the Movie Club
+//          app. Fetches all ratings for a specific movie joined with user data
+//          to display member names alongside scores. Saves ratings using an
+//          upsert pattern so the same method handles both new submissions and
+//          edits to existing ratings without requiring separate insert and
+//          update operations. Also handles rating deletion by movie and user ID.
+// =============================================================================
+
 package com.movieclub.services;
 
 import com.movieclub.config.Database;

@@ -1,3 +1,14 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: REST controller handling authentication endpoints for the Movie Club
+//          app. Registers routes for user login and PIN updates. Validates
+//          request data, delegates business logic to AuthService, and returns
+//          appropriate HTTP status codes and JSON responses. Returns user ID,
+//          username, and pick order on successful login without exposing the
+//          hashed PIN.
+// =============================================================================
+
 package com.movieclub.controllers;
 
 import com.movieclub.models.User;

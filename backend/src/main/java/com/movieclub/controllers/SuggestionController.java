@@ -1,3 +1,14 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: REST controller handling suggestion endpoints for the Movie Club app.
+//          Registers routes for fetching all suggestions, adding a suggestion,
+//          deleting a suggestion, marking a suggestion as watched, toggling a
+//          seen it response, and fetching seen it responses for a suggestion.
+//          Delegates all business logic to SuggestionService and returns
+//          appropriate HTTP status codes and JSON responses.
+// =============================================================================
+
 package com.movieclub.controllers;
 
 import com.movieclub.models.Movie;

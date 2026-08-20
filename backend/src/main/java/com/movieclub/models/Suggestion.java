@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Model class representing a movie suggestion on the next movie page
+//          of the Movie Club app. Maps to the suggestions table in the database.
+//          Includes convenience fields for the suggester's username, seen it
+//          counts, and a list of seen it responses that are populated from
+//          joined queries rather than stored directly in the suggestions table.
+// =============================================================================
+
 package com.movieclub.models;
 
 import java.time.LocalDateTime;

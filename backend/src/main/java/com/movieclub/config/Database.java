@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Manages the database connection for the Movie Club backend. Loads
+//          database credentials from a .env file in development or from system
+//          environment variables in production. Implements a singleton connection
+//          pattern so a single shared PostgreSQL connection is reused across
+//          all service classes rather than creating a new connection per request.
+// =============================================================================
+
 package com.movieclub.config;
 
 import io.github.cdimascio.dotenv.Dotenv;

@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Model class representing a watched movie in the Movie Club app.
+//          Maps to the movies table in the database. Includes convenience
+//          fields chosenByUsername and aggregateRating that are not stored
+//          in the database but populated via SQL joins and aggregate functions
+//          when fetching movies to avoid multiple round trips to the database.
+// =============================================================================
+
 package com.movieclub.models;
 
 import java.time.LocalDate;

@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Model class representing a member's rating for a watched movie in
+//          the Movie Club app. Maps to the ratings table in the database with
+//          fields for movie ID, user ID, and rating value between 0.0 and 10.0.
+//          Includes a convenience username field populated via SQL join when
+//          fetching ratings to display member names alongside their scores.
+// =============================================================================
+
 package com.movieclub.models;
 
 import java.time.LocalDateTime;

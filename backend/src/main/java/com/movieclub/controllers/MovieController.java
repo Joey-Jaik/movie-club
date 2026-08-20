@@ -1,3 +1,14 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: REST controller handling movie endpoints for the Movie Club app.
+//          Registers routes for fetching all watched movies, fetching ranked
+//          movies, adding a new movie, deleting a movie, and fetching ratings
+//          for a specific movie. Validates request data, delegates business
+//          logic to MovieService and RatingService, and returns appropriate
+//          HTTP status codes and JSON responses.
+// =============================================================================
+
 package com.movieclub.controllers;
 
 import com.movieclub.models.Movie;

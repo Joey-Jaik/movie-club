@@ -1,3 +1,14 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Service class handling all settings business logic for the Movie
+//          Club app. Retrieves and updates the next movie night date stored
+//          in the settings table. Also retrieves and increments the current
+//          picker index which determines whose turn it is to choose the next
+//          movie. The index cycles through 0-4 using modulo arithmetic to
+//          rotate through the five club members in alphabetical order.
+// =============================================================================
+
 package com.movieclub.services;
 
 import com.movieclub.config.Database;

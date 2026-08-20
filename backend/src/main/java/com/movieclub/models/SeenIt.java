@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: Model class representing a member's seen it response for a movie
+//          suggestion in the Movie Club app. Maps to the seen_it table in the
+//          database with fields for suggestion ID, user ID, and a boolean
+//          indicating whether the member has seen the suggested movie.
+//          Includes a convenience username field populated via SQL join.
+// =============================================================================
+
 package com.movieclub.models;
 
 import java.time.LocalDateTime;

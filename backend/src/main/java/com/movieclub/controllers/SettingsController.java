@@ -1,3 +1,13 @@
+// =============================================================================
+// Author:  Joey Jaikaran
+// Date:    August 20, 2026
+// Purpose: REST controller handling settings endpoints for the Movie Club app.
+//          Registers routes for getting and updating the next movie night date,
+//          and for getting and incrementing the current picker index. The picker
+//          index is stored in the database and incremented each time a movie is
+//          marked as watched to advance the pick order through the five members.
+// =============================================================================
+
 package com.movieclub.controllers;
 
 import com.movieclub.services.SettingsService;
